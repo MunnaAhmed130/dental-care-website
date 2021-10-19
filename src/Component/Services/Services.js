@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Row } from "react-bootstrap";
-import useAuth from "../Hooks/useAuth";
 import Service from "../Service/Service";
 
 const Services = () => {

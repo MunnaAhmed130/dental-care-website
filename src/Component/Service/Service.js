@@ -1,11 +1,11 @@
 import React from 'react';
-import { Button, Card, Col } from 'react-bootstrap';
+import { Card, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Service.css'
 
 const Service = (props) => {
     const { name, img, description, id } = props.service;
-    
+    console.log(name)
     return (
         <div>
             <Col className="service text-center">

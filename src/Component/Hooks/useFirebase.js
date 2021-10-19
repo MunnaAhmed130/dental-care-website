@@ -1,15 +1,11 @@
 import initializeAuthentication from "../Firebase/Firebase.init";
-import React from 'react';
 import  { useEffect, useState } from 'react';
 import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, createUserWithEmailAndPassword, updateProfile,  signInWithEmailAndPassword, signOut } from "firebase/auth";
 
 initializeAuthentication();
 const auth = getAuth();
 const useFirebase = () => {
-
     const [user, setUser] = useState({});
-    const [detail, setDetail] = useState([]);
-
     const [error, setError] = useState('');
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
@@ -41,6 +37,7 @@ const useFirebase = () => {
             } else {
                 setUser({})
             }
+            setIsLoading(false)
         });
     }, [])
 //handle name change for header
@@ -72,7 +69,6 @@ const useFirebase = () => {
     }
 
     const createNewUser = (email, password) => {
-        setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
         .then((result) => {
             setUser(result.user)
@@ -83,12 +79,12 @@ const useFirebase = () => {
         .catch((error) => {
             setError(error.message);
         })
-        .finally(()=>setIsLoading(false))
+       
     }
 
 //handle login
     const handleSignIn = (email, password) => {
-        setIsLoading(true);
+        // setIsLoading(true);
         signInWithEmailAndPassword(auth, email, password)
             .then(result => {
                 console.log(result.user)
@@ -107,14 +103,6 @@ const useFirebase = () => {
     }
 
     
-//useEffect for details
-    // useEffect(() => {
-    //     const url = `fakeData.json`;
-    //     fetch(url)
-    //         .then(res => res.json())
-    //     .then(data => setDetail(data))
-    //     setIsLoading(false)
-    // }, [])
 
     //handle log out
     const handleLogOut = () => {
@@ -130,7 +118,6 @@ const useFirebase = () => {
     return {
         user,
         error,
-        detail,
         handleName,
         handleEmail,
         handlePassword,
