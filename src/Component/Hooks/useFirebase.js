@@ -9,7 +9,7 @@ const useFirebase = () => {
 
     const [user, setUser] = useState({});
     const [detail, setDetail] = useState([]);
-    const [services, setServices] = useState([])
+
     const [error, setError] = useState('');
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
@@ -108,20 +108,14 @@ const useFirebase = () => {
 
     
 //useEffect for details
-    useEffect(() => {
-        const url = `fakeData.json`;
-        fetch(url)
-            .then(res => res.json())
-        .then(data => setDetail(data))
-        setIsLoading(false)
-    }, [])
-//useEffect for services
-    useEffect(() => {
-        fetch('fakeData.json')
-            .then(res => res.json())
-            .then(data => setServices(data))
-    }, [])
-    
+    // useEffect(() => {
+    //     const url = `fakeData.json`;
+    //     fetch(url)
+    //         .then(res => res.json())
+    //     .then(data => setDetail(data))
+    //     setIsLoading(false)
+    // }, [])
+
     //handle log out
     const handleLogOut = () => {
         setIsLoading(true);
@@ -137,7 +131,6 @@ const useFirebase = () => {
         user,
         error,
         detail,
-        services,
         handleName,
         handleEmail,
         handlePassword,

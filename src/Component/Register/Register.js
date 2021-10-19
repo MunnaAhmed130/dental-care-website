@@ -10,7 +10,7 @@ const Register = () => {
             <h3 className="pt-5 pb-4">Please {isLogin ? 'Login' : 'Register'}</h3>
             <Form onSubmit={handleSignUp} className="register-form " >
                 {isLogin ||
-                    <Form.Group className="mb-3 m-auto"  controlId="formBasicEmail">
+                    <Form.Group className="mb-3 m-auto"  controlId="formBasicName">
                     <Form.Label>Name</Form.Label>
                     <Form.Control onBlur={handleName} type="text" placeholder="Enter name" required />
                 </Form.Group>}
