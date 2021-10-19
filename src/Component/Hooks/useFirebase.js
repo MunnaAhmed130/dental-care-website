@@ -5,6 +5,8 @@ import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, creat
 initializeAuthentication();
 const useFirebase = () => {
     const [user, setUser] = useState({});
+    const [detail, setDetail] = useState([]);
+    const [services, setServices] = useState([])
     const [error, setError] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -91,10 +93,25 @@ const useFirebase = () => {
     }
     
 
+    useEffect(() => {
+        const url = `fakeData.json`;
+        fetch(url)
+            .then(res => res.json())
+        .then(data => setDetail(data))
+        setIsLoading(false)
+    }, [])
+
+    useEffect(() => {
+        fetch('fakeData.json')
+            .then(res => res.json())
+            .then(data => setServices(data))
+    },[])
 
     return {
         user,
         error,
+        detail,
+        services,
         handleEmail,
         handlePassword,
         handleSignUp,

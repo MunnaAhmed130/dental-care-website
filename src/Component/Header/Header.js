@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Container, Nav, Navbar, Row } from 'react-bootstrap';
+import {  Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { HashLink } from 'react-router-hash-link';
 import useAuth from '../Hooks/useAuth';
 import './Header.css'
@@ -24,7 +24,7 @@ const Header = () => {
                     }
                         {
                             user.email ?
-                                <button onClick={handleLogOut}>Log Out</button>
+                                <Button variant="warning text-light fw-bold" onClick={handleLogOut}>Log Out</Button>
                                 :
                                 <Nav.Link as={HashLink} to="/register">Register</Nav.Link>
                         }

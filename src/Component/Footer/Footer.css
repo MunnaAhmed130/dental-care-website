@@ -9,6 +9,10 @@
 .top-footer{
     background-color: rgba(0, 0, 0, 0.531);
     color: white;
+    margin-top: 50px;
+    padding-top: 30px;
+    text-align: left;
+    padding-left: 50px;
 }
 /* .footer p{
     margin-bottom: 0;

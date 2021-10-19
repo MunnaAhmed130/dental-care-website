@@ -1,14 +1,9 @@
-import { useEffect, useState } from "react";
 import { Row } from "react-bootstrap";
+import useAuth from "../Hooks/useAuth";
 import Service from "../Service/Service";
 
 const Services = () => {
-    const [services, setServices] = useState([])
-    useEffect(() => {
-        fetch('fakeData.json')
-            .then(res => res.json())
-            .then(data => setServices(data))
-    },[])
+    const { services } = useAuth();
     return (
         <div className="services">
             <h2 className="pt-5 fw-bold fs-1">Our Services</h2>

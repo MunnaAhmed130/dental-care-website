@@ -1,21 +1,21 @@
-import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import useAuth from '../Hooks/useAuth';
+import Info from './Info';
 
 const Detail = () => {
+    const { detail } = useAuth();
     const {id} = useParams();
-    // console.log(params)
-    const { detail, setDetail } = useState();
-    useEffect(() => {
-        const url = `fakeData.json/${id}`;
-        fetch(url)
-            .then(res => res.json())
-        .then(data => setDetail(data))
+    const params = useParams();
+    console.log(params)
 
-    }, [])
-    console.log(detail)
+
     return (
         <div>
             <h3>This is details{id} </h3>
+            {
+                detail.find(id=><Info info={id}></Info>)
+            }
+
         </div>
     );
 };

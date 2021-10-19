@@ -9,8 +9,8 @@ const Footer = () => {
         <div>
             <div className="footer ">
                 <div className="top-footer">
-                    <h3>Dental Care</h3>
-                    <p><FontAwesomeIcon icon={faHome} /> 01888222633</p>
+                    <h4>Dental Care</h4>
+                    <p><FontAwesomeIcon icon={faHome} /> 73 Canal Street, New York, NY</p>
                     <p><FontAwesomeIcon icon={faPhone} /> 01888222633</p>
                     <p className="mb-0 pb-3"><FontAwesomeIcon icon={faEnvelope} /> www.@dentalcare.com</p>
                 </div>
