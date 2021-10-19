@@ -8,7 +8,7 @@ const Footer = () => {
     return (
         <div>
             <div className="footer ">
-                <div className="top-footer">
+                <div className="top-footer mt-5 pt-3">
                     <h4>Dental Care</h4>
                     <p><FontAwesomeIcon icon={faHome} /> 73 Canal Street, New York, NY</p>
                     <p><FontAwesomeIcon icon={faPhone} /> 01888222633</p>

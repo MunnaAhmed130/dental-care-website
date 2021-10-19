@@ -8,7 +8,7 @@ const Register = () => {
     const { handleSignUp, handleGoogleSignIn, handleEmail, handlePassword, toggleLogin, isLogin, error } = useAuth();
     return (
         <div className="register">
-            <h3>Please {isLogin ? 'Login' : 'Register'}</h3>
+            <h3 className="pt-5">Please {isLogin ? 'Login' : 'Register'}</h3>
             <Form onSubmit={handleSignUp} className="register-form " >
                 <Form.Group className="mb-3 w-25 m-auto" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
@@ -34,7 +34,7 @@ const Register = () => {
                 <Link to="/login">Already have an account?</Link>
             </p> */}
             <br />
-                    <Button onClick={handleGoogleSignIn}  variant="primary" >
+                    <Button onClick={handleGoogleSignIn} className="mb-3" variant="primary" >
                 Google Sign In
             </Button>
         </div>
