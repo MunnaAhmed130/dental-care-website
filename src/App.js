@@ -8,10 +8,15 @@ import Login from './Component/Login/Login';
 import NotFound from './Component/NotFound/NotFound';
 import Footer from './Component/Footer/Footer';
 import Services from './Component/Services/Services';
+import Register from './Component/Register/Register';
+import AuthProvider from './Component/Context/AuthProvider';
+import PrivateRoute from './Component/PrivateRoute/PrivateRoute';
+import Detail from './Component/Details/Detail';
 
 function App() {
   return (
     <div className="App">
+      <AuthProvider>
       <BrowserRouter>
         <Header></Header>
         <Switch>
@@ -21,23 +26,30 @@ function App() {
           <Route path="/home">
             <Home></Home>
           </Route>
-          <Route path="/services">
+          <PrivateRoute path="/services">
             <Services></Services>
-          </Route>
+          </PrivateRoute>
+          <PrivateRoute path="/details/:id">
+            <Detail></Detail>
+          </PrivateRoute>
           <Route path="/contact">
             <Contact></Contact>
           </Route>
           <Route path="/login">
             <Login></Login>
           </Route>
+          <Route path="/register">
+            <Register></Register>
+          </Route>
           <Route path="*">
             <NotFound></NotFound>
           </Route>
         </Switch>
       </BrowserRouter>
+      </AuthProvider>
       <Footer></Footer>
     </div>
-  );git add README.md
+  );
 }
 
 export default App;

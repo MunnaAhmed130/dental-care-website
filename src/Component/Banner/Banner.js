@@ -5,40 +5,43 @@ import './Banner.css';
 
 const Banner = () => {
     return (
-        <div>
+        <div className="banner">
             {/* <div className="banner">
                 <h2 >We Protect Your precious Smile</h2>
             </div> */}
+            
+
+
             <Carousel>
                 <Carousel.Item>
-                    <img  className="d-block w-100 banner-img img-fluid" src="https://i.ibb.co/4tm5KbB/slide-1.jpg" alt="First slide"/>
+                    <img  className="d-block w-100 banner-img img-fluid" src="https://i.ibb.co/k498kZp/dentalia-slider-1920x600-restorative-dentistry.jpg" alt="First slide"/>
                     <Carousel.Caption>
-                    <h3></h3>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    <h3>Everlasting Smile</h3>
+                    <p>We work to create natural glow for your teeth.</p>
                 </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
                     <img
                     className="d-block w-100 banner-img img-fluid"
-                    src="https://i.ibb.co/zStbD6T/slide-2.jpg"
+                    src="https://i.ibb.co/f43zNJy/dentalia-slider-1920x600-oral-health-consultation.jpg"
                     alt="Second slide"
                     />
 
                     <Carousel.Caption>
-                    <h3>Second slide label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h3>An Enjoyable Experience</h3>
+                    <p>We create advanced individual treatement only for you.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
                     <img
                     className="d-block w-100 banner-img img-fluid"
-                    src="https://i.ibb.co/BNMZxLb/slider-layer-dentist.png"
+                    src="https://i.ibb.co/Jd2NR8L/dentalia-slider-1920x600-cosmetic-dentistry.jpg"
                     alt="Third slide"
                     />
 
                     <Carousel.Caption>
-                    <h3>Third slide label</h3>
-                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                    <h3>Brighten Your Smile</h3>
+                    <p>Advanced cosmetic dentistry for your individual need.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>

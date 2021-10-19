@@ -1,32 +1,38 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
-import useFirebase from '../Hooks/useFirebase'
+import { Link } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router';
+import useAuth from '../Hooks/useAuth';
+import './Login.css'
 
 const Login = () => {
-    const { handleGoogleSignIn } = useFirebase();
+    const { handleGoogleSignIn, handleSignIn, error } = useAuth();
+
     return (
-        <div>
-            <Form>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
+        <div className="login">
+            <Form  className=" login-form" >
+                <Form.Group className="mb-3 w-25 m-auto" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" />
-                    <Form.Text className="text-muted">
+                    <Form.Control type="email" placeholder="Enter email" required/>
+                    {/* <Form.Text className="text-muted">
                     We'll never share your email with anyone else.
-                    </Form.Text>
+                    </Form.Text> */}
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Group className="mb-3 w-25 m-auto" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" />
+                    <Form.Control type="password" placeholder="Password" required/>
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
+                <Form.Group className="mb-3 w-25 m-auto" controlId="formBasicCheckbox">
+                    <Form.Check type="checkbox" label="I agree with the terms and conditions" required/>
                 </Form.Group>
-                <Button variant="primary" type="submit">
+                <Button onClick={handleSignIn} variant="primary" type="submit">
                     Submit
                 </Button>
             </Form><br />
-                    <Button onClick={handleGoogleSignIn} variant="primary" >
+            <p>{error}</p>
+            <Link to="/register">Create an Account</Link><br />
+                    <Button  variant="primary" >
                 Google Sign In
             </Button>
         </div>
