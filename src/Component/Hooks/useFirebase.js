@@ -15,6 +15,7 @@ const useFirebase = () => {
     const [isLoading, setIsLoading] = useState(true);
     const auth = getAuth();
 
+    //handle Google sign in 
     const handleGoogleSignIn = () => {
         setIsLoading(true);
         const googleProvider = new GoogleAuthProvider();
@@ -40,22 +41,26 @@ const useFirebase = () => {
             setIsLoading(false);
         });
     }, [])
-
+//handle name change for header
     const handleName = e => {
         setName(e.target.value);
     }
+//set user name for header
     const setUserName = () => {
         updateProfile(auth.currentUser,{
             displayName : name
         })
         .then(result =>{})
     }
+//handle Email change for register
     const handleEmail = e => {
         setEmail(e.target.value);
     }
+
     const handlePassword = e => {
         setPassword(e.target.value);
     }
+//handle register
     const handleSignUp = e => {
         e.preventDefault();
         if (password.length < 6) {
@@ -77,7 +82,7 @@ const useFirebase = () => {
         });
     }
 
-
+//handle login
     const handleSignIn = (email, password) => {
         setIsLoading(true);
         signInWithEmailAndPassword(auth, email, password)
@@ -95,7 +100,7 @@ const useFirebase = () => {
     const toggleLogin = e => {
         setIsLogin(e.target.checked);
     }
-
+//handle log out
     const handleLogOut = () => {
         setIsLoading(true);
         signOut(auth)
@@ -107,7 +112,7 @@ const useFirebase = () => {
         .finally(()=>setIsLoading(false))
     }
     
-
+//useEffect for details
     useEffect(() => {
         const url = `fakeData.json`;
         fetch(url)
@@ -115,7 +120,7 @@ const useFirebase = () => {
         .then(data => setDetail(data))
         setIsLoading(false)
     }, [])
-
+//useEffect for services
     useEffect(() => {
         fetch('fakeData.json')
             .then(res => res.json())

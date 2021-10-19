@@ -11,10 +11,10 @@ const Detail = () => {
 
     return (
         <div>
-            <h3>This is details{id} </h3>
-            {
+            <h3>This is details {id} </h3>
+            {/* {
                 detail.find(id=><Info info={id}></Info>)
-            }
+            } */}
 
         </div>
     );

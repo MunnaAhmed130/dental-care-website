@@ -1,21 +1,43 @@
 .about-row{
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    margin-bottom: 20px;
     
 }
 
+
 .about-row p{
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 500;
     color: rgba(0, 0, 0, 0.769);
     display: inline-block;
-    margin-block: auto;
+    line-height: 2em;
 
 }
 
 .about-banner{
     background-image: url("https://i.ibb.co/34rVWX6/banner-center.jpg");
     background-repeat: no-repeat;
-    margin-block: 50px;
+    margin-block: 1em;
     color: white;
+    height: 300px;
 }
 
+
+.about_bg_img{
+    background-image: url("https://i.ibb.co/W3p1RqX/slide-02.jpg");
+    height: 400px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+
+}
+
+.bg_info{
+    font-size: 3rem ;
+    font-weight: 700;
+}
+
+@media only screen and (max-width:600px) {
+    
+}

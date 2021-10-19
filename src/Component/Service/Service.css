@@ -3,3 +3,8 @@
     height: 300px;
     object-fit: cover;
 }
+
+.detail-btn{
+    border-radius: 5px;
+    padding: .5em .3em;
+}

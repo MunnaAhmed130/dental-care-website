@@ -16,7 +16,7 @@ const Service = (props) => {
                         <Card.Text>{description}</Card.Text>
                     </Card.Body>
                     <div className="text-center mb-4">
-                        <Link to={`/details/${id}`}><Button variant="primary text-light w-25 justify-center "> Details </Button></Link></div>
+                        <Link to={`/details/${id}`}><button className="detail-btn bg-primary border-0  text-light w-25 justify-center "> Details </button></Link></div>
                 </Card>
             </Col>
         </div>

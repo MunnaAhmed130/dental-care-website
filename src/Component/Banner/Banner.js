@@ -6,12 +6,6 @@ import './Banner.css';
 const Banner = () => {
     return (
         <div className="banner">
-            {/* <div className="banner">
-                <h2 >We Protect Your precious Smile</h2>
-            </div> */}
-            
-
-
             <Carousel>
                 <Carousel.Item>
                     <img  className="d-block w-100 banner-img img-fluid" src="https://i.ibb.co/k498kZp/dentalia-slider-1920x600-restorative-dentistry.jpg" alt="First slide"/>

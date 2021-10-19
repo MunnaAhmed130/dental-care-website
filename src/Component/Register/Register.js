@@ -1,7 +1,5 @@
-import userEvent from '@testing-library/user-event';
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import useAuth from '../Hooks/useAuth';
 import './Register.css'
 
@@ -11,11 +9,12 @@ const Register = () => {
         <div className="register">
             <h3 className="pt-5 pb-4">Please {isLogin ? 'Login' : 'Register'}</h3>
             <Form onSubmit={handleSignUp} className="register-form " >
-               { isLogin || <Form.Group className="mb-3 w-25 m-auto" controlId="formBasicEmail">
+                {isLogin ||
+                    <Form.Group className="mb-3 m-auto"  controlId="formBasicEmail">
                     <Form.Label>Name</Form.Label>
                     <Form.Control onBlur={handleName} type="text" placeholder="Enter name" required />
                 </Form.Group>}
-                <Form.Group className="mb-3 w-25 m-auto" controlId="formBasicEmail">
+                <Form.Group className="mb-3  m-auto" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control onBlur={handleEmail} type="email" placeholder="Enter email" required />
                     <Form.Text className="text-muted">
@@ -23,22 +22,18 @@ const Register = () => {
                     </Form.Text>
                 </Form.Group>
 
-                <Form.Group className="mb-3 w-25 m-auto" controlId="formBasicPassword">
+                <Form.Group className="mb-3  m-auto" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
                     <Form.Control onBlur={handlePassword} type="password" placeholder="Password" required />
                     <p className="text-danger">{error}</p>
                 </Form.Group>
-                <Form.Group className="mb-3 w-25 m-auto" controlId="formBasicCheckbox">
+                <Form.Group className="mb-3  m-auto" controlId="formBasicCheckbox">
                     <Form.Check onChange={toggleLogin} type="checkbox" label="Already have an account?" />
                 </Form.Group>
                 <Button variant="primary" type="submit">
                 {isLogin ? 'Login' : 'Register'}
                 </Button>
             </Form><br />
-            {/* <p>
-                <Link to="/login">Already have an account?</Link>
-            </p> */}
-            <br />
                     <Button onClick={handleGoogleSignIn} className="mb-3" variant="primary" >
                 Google Sign In
             </Button>
