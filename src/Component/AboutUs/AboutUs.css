@@ -38,6 +38,17 @@
     font-weight: 700;
 }
 
-@media only screen and (max-width:600px) {
-    
+@media only screen and (min-width:600px) and (max-width:2000px) {
+    .about_bg_img{
+        margin-bottom: 20px;
+    }
+    .about-row{
+        margin-bottom: 100px;
+    }
+    .row1 h3{
+        margin-bottom: 50px;
+    }
+    .about-banner{
+        margin-bottom: 50px;
+    }
 }

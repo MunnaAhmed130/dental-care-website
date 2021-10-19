@@ -10,19 +10,19 @@ const Contact = () => {
             <Form className="contact-form w-50 m-auto pt-4" >
 
     <Row className="mb-3">
-      <Form.Group as={Col} sm="12"  className="mb-2 " controlId="formGridFirstName">
+      <Form.Group as={Col} sm="12" lg="6"  className="mb-2 " controlId="formGridFirstName">
         <Form.Control type="text" placeholder="Enter your first name" />
       </Form.Group>
-      <Form.Group as={Col} sm="12"  controlId="formGridLastName">
+      <Form.Group as={Col} sm="12" lg="6"   controlId="formGridLastName">
         <Form.Control type="text" placeholder="Enter your last name" />
       </Form.Group>
           </Row>
           <Row className="mb-3">
-    <Form.Group as={Col}  sm="12" className="mb-2" controlId="formGridEmail">
+    <Form.Group as={Col}  sm="12"lg="6"  className="mb-2" controlId="formGridEmail">
       <Form.Control type="email" placeholder="Enter email" />
     </Form.Group>
 
-    <Form.Group as={Col}  sm="12" controlId="formGridPassword">
+    <Form.Group as={Col}  sm="12" lg="6" controlId="formGridPassword">
       <Form.Control type="password" placeholder="Password" />
     </Form.Group>
   </Row>

@@ -11,7 +11,7 @@ const AboutUs = () => {
                 </div>
             </section>
 
-            <Container >
+            <Container className="row1" >
               <h3 className="py-4 fs-1">About Our Clinic</h3>
                 <Row className="d-flex about-row">
                     <Col sm="6" >
