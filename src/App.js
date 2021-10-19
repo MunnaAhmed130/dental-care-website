@@ -4,7 +4,6 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Header from './Component/Header/Header';
 import Home from './Component/Home/Home';
 import Contact from './Component/Contact/Contact';
-import Login from './Component/Login/Login';
 import NotFound from './Component/NotFound/NotFound';
 import Footer from './Component/Footer/Footer';
 import Services from './Component/Services/Services';
@@ -12,6 +11,7 @@ import Register from './Component/Register/Register';
 import AuthProvider from './Component/Context/AuthProvider';
 import PrivateRoute from './Component/PrivateRoute/PrivateRoute';
 import Detail from './Component/Details/Detail';
+import AboutUs from './Component/AboutUs/AboutUs';
 
 function App() {
   return (
@@ -35,8 +35,8 @@ function App() {
           <Route path="/contact">
             <Contact></Contact>
           </Route>
-          <Route path="/login">
-            <Login></Login>
+          <Route path="/about_us">
+            <AboutUs></AboutUs>
           </Route>
           <Route path="/register">
             <Register></Register>

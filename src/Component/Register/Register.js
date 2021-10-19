@@ -1,3 +1,4 @@
+import userEvent from '@testing-library/user-event';
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -5,11 +6,15 @@ import useAuth from '../Hooks/useAuth';
 import './Register.css'
 
 const Register = () => {
-    const { handleSignUp, handleGoogleSignIn, handleEmail, handlePassword, toggleLogin, isLogin, error } = useAuth();
+    const { handleSignUp, handleGoogleSignIn, handleName, handleEmail, handlePassword, toggleLogin, isLogin, error } = useAuth();
     return (
         <div className="register">
-            <h3 className="pt-5">Please {isLogin ? 'Login' : 'Register'}</h3>
+            <h3 className="pt-5 pb-4">Please {isLogin ? 'Login' : 'Register'}</h3>
             <Form onSubmit={handleSignUp} className="register-form " >
+               { isLogin || <Form.Group className="mb-3 w-25 m-auto" controlId="formBasicEmail">
+                    <Form.Label>Name</Form.Label>
+                    <Form.Control onBlur={handleName} type="text" placeholder="Enter name" required />
+                </Form.Group>}
                 <Form.Group className="mb-3 w-25 m-auto" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control onBlur={handleEmail} type="email" placeholder="Enter email" required />

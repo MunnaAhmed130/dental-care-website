@@ -1,6 +1,6 @@
 import initializeAuthentication from "../Firebase/Firebase.init";
 import React, { useEffect, useState } from 'react';
-import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, createUserWithEmailAndPassword,  signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, createUserWithEmailAndPassword, updateProfile,  signInWithEmailAndPassword, signOut } from "firebase/auth";
 
 initializeAuthentication();
 const useFirebase = () => {
@@ -9,6 +9,7 @@ const useFirebase = () => {
     const [services, setServices] = useState([])
     const [error, setError] = useState('');
     const [email, setEmail] = useState('');
+    const [name, setName] = useState('');
     const [password, setPassword] = useState('');
     const [isLogin, setIsLogin] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
@@ -39,6 +40,16 @@ const useFirebase = () => {
             setIsLoading(false);
         });
     }, [])
+
+    const handleName = e => {
+        setName(e.target.value);
+    }
+    const setUserName = () => {
+        updateProfile(auth.currentUser,{
+            displayName : name
+        })
+        .then(result =>{})
+    }
     const handleEmail = e => {
         setEmail(e.target.value);
     }
@@ -53,12 +64,13 @@ const useFirebase = () => {
         isLogin ? handleSignIn(email, password) : createNewUser(email, password);
     }
 
-    const createNewUser = (email,password) => {
+    const createNewUser = ( email,password) => {
         createUserWithEmailAndPassword(auth, email, password)
         .then((result) => {
             // setUser(result.user)
             console.log(result.user)
             setError('')
+            setUserName()
         })
         .catch((error) => {
             setError(error.message);
@@ -67,15 +79,18 @@ const useFirebase = () => {
 
 
     const handleSignIn = (email, password) => {
+        setIsLoading(true);
         signInWithEmailAndPassword(auth, email, password)
-        .then(result => {
-            console.log(result.user)
-            setError('')
-        })
-        .catch((error) => {
-          setError(error.message)
-        });
-        }
+            .then(result => {
+                console.log(result.user)
+                setUser(result.user)
+                setError('')
+            })
+            .catch((error) => {
+                setError(error.message)
+            })
+            .finally(() => setIsLoading(false))
+    };
 
     const toggleLogin = e => {
         setIsLogin(e.target.checked);
@@ -112,6 +127,7 @@ const useFirebase = () => {
         error,
         detail,
         services,
+        handleName,
         handleEmail,
         handlePassword,
         handleSignUp,

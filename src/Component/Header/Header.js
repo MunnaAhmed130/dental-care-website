@@ -18,8 +18,9 @@ const Header = () => {
                     <Nav.Link as={HashLink} to="/home">Home</Nav.Link>
                     <Nav.Link as={HashLink} to="/services">Services</Nav.Link>
                     <Nav.Link as={HashLink} to="/contact">Contact</Nav.Link>
+                    <Nav.Link as={HashLink} to="/about_us">About Us</Nav.Link>
                   
-                    {user.displayName &&
+                    {user.email &&
                             <Navbar.Text>Signed in as:<a href="#user">{user.displayName}</a> </Navbar.Text>
                     }
                         {

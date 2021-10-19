@@ -1,0 +1,21 @@
+.about-row{
+    border: 1px solid black;
+    
+}
+
+.about-row p{
+    font-size: 15px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.769);
+    display: inline-block;
+    margin-block: auto;
+
+}
+
+.about-banner{
+    background-image: url("https://i.ibb.co/34rVWX6/banner-center.jpg");
+    background-repeat: no-repeat;
+    margin-block: 50px;
+    color: white;
+}
+
