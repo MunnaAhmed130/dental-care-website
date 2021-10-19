@@ -1,12 +1,8 @@
 import { useParams } from 'react-router';
-import useAuth from '../Hooks/useAuth';
-import Info from './Info';
 
 const Detail = () => {
-    const { detail } = useAuth();
     const {id} = useParams();
-    const params = useParams();
-    console.log(params)
+
 
 
     return (

@@ -3,10 +3,11 @@ import { Spinner } from 'react-bootstrap';
 import { Route, Redirect } from 'react-router';
 import useAuth from '../Hooks/useAuth';
 
+
 const PrivateRoute = ({ children, ...rest }) => {
-    const { user, isLoading } = useAuth();
+    const { isLoading, user } = useAuth();
     if (isLoading) {
-        return <Spinner animation="border" variant="secondary" />
+        return   <Spinner animation="border" variant="danger" />
     }
 
     return (
